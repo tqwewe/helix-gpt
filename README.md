@@ -6,18 +6,18 @@ Requires Deno version 1.42.3 or higher
 
 **Usage:**
 
-The fork have tags that follows upstream but with `-deno` suffix, for example `0.31-deno`
+The fork have tags that follows upstream but with `-deno` suffix, for example `0.34-deno`
 
 To run with deno
 
 ```
-deno run --allow-env --allow-net https://raw.githubusercontent.com/sigmaSd/helix-gpt/0.31-deno/src/app.ts  --handler codeium` # make sure to use the latest deno tag
+deno run --allow-env --allow-net https://raw.githubusercontent.com/sigmaSd/helix-gpt/0.34-deno/src/app.ts  --handler codeium` # make sure to use the latest deno tag
 ```
 
 To compile to a standalone executable
 
 ```
-deno compile --output helix-gpt --no-check --allow-env --allow-net https://raw.githubusercontent.com/sigmaSd/helix-gpt/0.31-deno/src/app.ts # make sure to use the latest deno tag
+deno compile --output helix-gpt --no-check --allow-env --allow-net https://raw.githubusercontent.com/sigmaSd/helix-gpt/0.34-deno/src/app.ts # make sure to use the latest deno tag
 ```
 
 Example of helix configuration
@@ -25,7 +25,7 @@ Example of helix configuration
 ```toml
 [language-server.gpt]
 command = "deno"
-args = ["run", "--allow-net","--allow-env", "https://raw.githubusercontent.com/sigmaSd/helix-gpt/0.31-deno/src/app.ts"]
+args = ["run", "--allow-net","--allow-env", "https://raw.githubusercontent.com/sigmaSd/helix-gpt/0.34-deno/src/app.ts"]
 # HANDLER can be set to openai/copilot/codeium
 environment = { HANDLER= "codeium" }
 ```
