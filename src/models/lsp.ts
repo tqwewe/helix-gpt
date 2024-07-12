@@ -131,7 +131,8 @@ export class Service {
     })
 
     const len = (new TextEncoder()).encode(request).length
-    process.stdout.write(`Content-Length: ${len}\r\n\r\n${request}`)
+    //NOTE: for some reason, process.stdout.write lead to a parse error with deno
+    console.log(`Content-Length: ${len}\r\n\r\n${request}`)
     log("sent request", request)
   }
 
