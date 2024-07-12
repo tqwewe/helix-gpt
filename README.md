@@ -11,7 +11,7 @@ The fork have tags that follows upstream but with `-deno` suffix, for example `0
 To run with deno
 
 ```
-deno run --allow-env --allow-net https://raw.githubusercontent.com/sigmaSd/helix-gpt/0.34-deno/src/app.ts  --handler codeium` # make sure to use the latest deno tag
+deno run --allow-env --allow-net https://raw.githubusercontent.com/sigmaSd/helix-gpt/0.34-deno/src/app.ts  --handler codeium # make sure to use the latest deno tag
 ```
 
 To compile to a standalone executable
