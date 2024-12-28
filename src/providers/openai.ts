@@ -4,6 +4,7 @@ import config from "../config.ts";
 import { log } from "../utils.ts";
 
 export default class Github extends ApiBase {
+  private model: string
 
   constructor() {
     super({
@@ -13,6 +14,7 @@ export default class Github extends ApiBase {
         "Authorization": `Bearer ${config.openaiKey}`
       }
     })
+    this.model = config.openaiModel;
   }
 
   async chat(request: string, contents: string, filepath: string, languageId: string): Promise<types.Chat> {
@@ -33,7 +35,7 @@ export default class Github extends ApiBase {
 
     const body = {
       max_tokens: 7909,
-      model: "gpt-4",
+      model: this.model,
       n: 1,
       stream: false,
       temperature: 0.1,
@@ -66,7 +68,7 @@ export default class Github extends ApiBase {
     const body = {
       model: config.openaiModel,
       max_tokens: parseInt(config.openaiMaxTokens as string),
-      n: suggestions,
+      n: this.model.startsWith('deepseek-') ? undefined : suggestions,
       temperature: suggestions > 1 ? 0.4 : 0,
       top_p: 1,
       frequency_penalty: 1,
